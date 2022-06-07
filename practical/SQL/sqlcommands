@@ -1,0 +1,111 @@
+mysql> use java;
+Database changed
+mysql> create table student(
+    -> roll_no int primary key not null,
+    -> name varchar(20),
+    -> adresss varchar(20)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc student
+    -> desc student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc student' at line 2
+mysql> desc student;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| roll_no | int(11)     | NO   | PRI | NULL    |       |
+| name    | varchar(20) | YES  |     | NULL    |       |
+| adresss | varchar(20) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+mysql> insert into student values(1,"manish","govandi");
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into student values(2,"shubham","govandi");
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into student values(3,"hamza","govandi");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(4,"omkar","govandi");
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from student;
++---------+---------+---------+
+| roll_no | name    | adresss |
++---------+---------+---------+
+|       1 | manish  | govandi |
+|       2 | shubham | govandi |
+|       3 | hamza   | govandi |
+|       4 | omkar   | govandi |
++---------+---------+---------+
+4 rows in set (0.00 sec)
+
+mysql> create table people(
+    ->
+    -> s
+    ->
+    -> d,fe,d
+    -> w.d:>Ad
+    -> 0;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'd,fe,d
+w.d:>Ad
+0' at line 5
+mysql> create table person(
+    -> id int primary key not null,
+    -> first_name varchar(10) not null,
+    -> last_name varchar(10) not null,
+    -> adress varchar(20) not null
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> )insert into person values(101,"manish","patil","govandi mumbai",
+    -> insert into person values(251,"advait","patole","govandi mumbai",
+    -> 0;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')insert into person values(101,"manish","patil","govandi mumbai",
+insert into pe' at line 1
+mysql> insert into person values(251,"advait","patole","govandi mumbai");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into person values(101,"manish","patil","govandi mumbai");;
+Query OK, 1 row affected (0.01 sec)
+
+ERROR:
+No query specified
+
+mysql> insert into person values(101,"manish","patil","govandi mumbai");
+ERROR 1062 (23000): Duplicate entry '101' for key 'PRIMARY'
+mysql> insert into person values(1044,"harshad","patil","govandi mumbai");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into person values(44,"sudhir","patil","govandi mumbai");
+Query OK, 1 row affected (0.03 sec)
+
+mysql> desc person
+    -> ;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| id         | int(11)     | NO   | PRI | NULL    |       |
+| first_name | varchar(10) | NO   |     | NULL    |       |
+| last_name  | varchar(10) | NO   |     | NULL    |       |
+| adress     | varchar(20) | NO   |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> select * from person
+    -> ;
++------+------------+-----------+----------------+
+| id   | first_name | last_name | adress         |
++------+------------+-----------+----------------+
+|   44 | sudhir     | patil     | govandi mumbai |
+|  101 | manish     | patil     | govandi mumbai |
+|  251 | advait     | patole    | govandi mumbai |
+| 1044 | harshad    | patil     | govandi mumbai |
++------+------------+-----------+----------------+
+4 rows in set (0.00 sec)
+
+mysql>
+
