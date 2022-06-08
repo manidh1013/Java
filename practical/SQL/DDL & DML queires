@@ -1,0 +1,104 @@
+
+mysql> create table employee (
+    -> id int primary key ,
+    -> name varchar(10) not null,
+    -> phoneno int not null,
+    -> emailid varchar(20) not null,
+    -> adress varchar (20) not null);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc employee;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int(11)     | NO   | PRI | NULL    |       |
+| name    | varchar(10) | NO   |     | NULL    |       |
+| phoneno | int(11)     | NO   |     | NULL    |       |
+| emailid | varchar(20) | NO   |     | NULL    |       |
+| adress  | varchar(20) | NO   |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+5 rows in set (0.02 sec)
+
+mysql> alter table employee add salary int ;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+mysql> desc employee;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int(11)     | NO   | PRI | NULL    |       |
+| name    | varchar(10) | NO   |     | NULL    |       |
+| phoneno | int(11)     | NO   |     | NULL    |       |
+| emailid | varchar(20) | NO   |     | NULL    |       |
+| adress  | varchar(20) | NO   |     | NULL    |       |
+| salary  | int(11)     | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+6 rows in set (0.02 sec)
+
+mysql> insert  into employee values (101,'manish',9004741,'jbdjb@gmail.com','govandi',18000);
+Query OK, 1 row affected (0.01 sec)
+mysql> insert  into employee values (102,'omkar',454741,'omakr@gmail.com','govandi',28000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert  into employee values (122,'shuibham',045741,'shubh@gmail.com','kurla',50400);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert  into employee values (22,'anuj',01471,'anujh@gmail.com','vasai',36400);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from employee;
++-----+----------+---------+-----------------+---------+--------+
+| id  | name     | phoneno | emailid         | adress  | salary |
++-----+----------+---------+-----------------+---------+--------+
+|  22 | anuj     |    1471 | anujh@gmail.com | vasai   |  36400 |
+| 101 | manish   | 9004741 | jbdjb@gmail.com | govandi |  18000 |
+| 102 | omkar    |  454741 | omakr@gmail.com | govandi |  28000 |
+| 122 | shuibham |   45741 | shubh@gmail.com | kurla   |  50400 |
++-----+----------+---------+-----------------+---------+--------+
+4 rows in set (0.00 sec)
+
+mysql> update employee set emailid='manish@gmail.com' where id =101;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee;
++-----+----------+---------+------------------+---------+--------+
+| id  | name     | phoneno | emailid          | adress  | salary |
++-----+----------+---------+------------------+---------+--------+
+|  22 | anuj     |    1471 | anujh@gmail.com  | vasai   |  36400 |
+| 101 | manish   | 9004741 | manish@gmail.com | govandi |  18000 |
+| 102 | omkar    |  454741 | omakr@gmail.com  | govandi |  28000 |
+| 122 | shuibham |   45741 | shubh@gmail.com  | kurla   |  50400 |
++-----+----------+---------+------------------+---------+--------+
+4 rows in set (0.00 sec)
+
+mysql> update employee set name='shubham' where id =122;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee;
++-----+---------+---------+------------------+---------+--------+
+| id  | name    | phoneno | emailid          | adress  | salary |
++-----+---------+---------+------------------+---------+--------+
+|  22 | anuj    |    1471 | anujh@gmail.com  | vasai   |  36400 |
+| 101 | manish  | 9004741 | manish@gmail.com | govandi |  18000 |
+| 102 | omkar   |  454741 | omakr@gmail.com  | govandi |  28000 |
+| 122 | shubham |   45741 | shubh@gmail.com  | kurla   |  50400 |
++-----+---------+---------+------------------+---------+--------+
+4 rows in set (0.00 sec)
+
+mysql> delete from  employee where id =22;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> truncate table employee;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> drop table employee;
+Query OK, 0 rows affected (0.01 sec)
+
+    
+mysql> select * from employee;
+ERROR 1146 (42S02): Table 'java.employee' doesn't exist
+mysql>
